@@ -19,13 +19,23 @@ library
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 
-executable HBoolSearch-exe
+executable Indexer
   hs-source-dirs:      app
-  main-is:             Main.hs
+  main-is:             indexer/Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , HBoolSearch, xml-conduit, containers, xml-hamlet
+  default-language:    Haskell2010
+
+executable Searcher
+  hs-source-dirs:      app
+  main-is:             searcher/Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , HBoolSearch
   default-language:    Haskell2010
+
+
 
 test-suite HBoolSearch-test
   type:                exitcode-stdio-1.0
