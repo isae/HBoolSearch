@@ -16,7 +16,7 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 5, xml, containers, array
   default-language:    Haskell2010
 
 executable Indexer
@@ -24,7 +24,7 @@ executable Indexer
   main-is:             indexer/Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
-                     , HBoolSearch, xml-conduit, containers, xml-hamlet
+                     , HBoolSearch, xml, containers, directory, text, array
   default-language:    Haskell2010
 
 executable Searcher
